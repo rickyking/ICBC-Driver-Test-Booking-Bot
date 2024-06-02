@@ -3,7 +3,14 @@
 This bot snipes the closest time (based on your logic) for an ICBC Road Test.
 
 ## Pre-requisites and Installations
-1. You only need to install Node.js (https://nodejs.org/en/download/)
+1. You only need to install Node.js (https://nodejs.org/en/download/package-manager)
+2. install chrome
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt --fix-broken install
+```
 
 ## Setup the bot
 
