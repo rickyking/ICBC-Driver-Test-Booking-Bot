@@ -39,6 +39,7 @@ class WebDriverHelper {
     }
 
     this.browser = await puppeteer.launch({
+      // args: ['--no-sandbox'],
       headless: false,
     });
     this.page = await this.browser.newPage();
@@ -62,8 +63,8 @@ class WebDriverHelper {
     try {
       const errorMessageElement = await this.page.$x("//span[contains(text(), 'Hmm, looks like something went wrong on our end. Please try again later.')]");
       if (errorMessageElement.length > 0) {
-        logWithTimestamp("Soft ban detected. Waiting for 1 hour...");
-        await sleep(60 * 60 * 1000);
+        logWithTimestamp("Soft ban detected. Waiting for 5min...");
+        await sleep(5 * 60 * 1000);
       }
     } catch (error) {
       logWithTimestamp("Error while checking for soft ban message:", error);
